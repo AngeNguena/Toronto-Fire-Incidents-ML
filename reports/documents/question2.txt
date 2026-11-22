@@ -1,0 +1,30 @@
+# Question 2 — Dollar Loss Analysis Report
+
+## Objective
+Identify which Toronto fire incident type causes the highest estimated financial loss and examine the influence of building status, fire spread, and location.
+
+## Methodology
+We analyzed **26,649 incidents with recorded dollar-loss values** from a dataset of 36,564 incidents. Using Python, Pandas, Matplotlib, and Seaborn, we calculated total, average, and median losses and created comparison charts. Missing dollar-loss values were excluded from financial calculations.
+
+## Key Findings
+
+1. **Incident Type:** Regular fires caused the highest total recorded loss (**$990.78 million**), while explosions had the highest average loss per incident (**$52,433**).
+
+2. **Building Status:** Normal buildings contributed the highest total loss ($668.24 million), while buildings under construction had the highest average loss (**$189,491**).
+
+3. **Extent of Fire:** Fires affecting an entire structure had the highest average loss (**$759,477**), compared with only $8,576 for fires confined to their original object.
+
+4. **Location:** Ward 5 recorded the highest total estimated loss (**$90.23 million**), followed by Ward 7 ($58.24 million).
+
+## Recommendations
+
+- Strengthen fire prevention and early containment measures to reduce financial damage.
+- Improve fire safety inspections at construction and renovation sites.
+- Investigate high-loss areas, particularly Ward 5, to identify possible contributing factors.
+- Improve the recording of financial losses to support more accurate future analysis.
+
+## Limitations
+Approximately **27.12% of incidents had missing dollar-loss values**. Extreme losses may affect averages, and some categories contain relatively few incidents. The findings show associations, not proven causes.
+
+## Conclusion
+Regular fires account for the greatest total recorded financial loss, while explosions have the highest average loss per incident. Fire spread, building status, and location are also associated with differences in financial damage. These findings provide a foundation for developing a machine learning model to predict estimated dollar loss.
