@@ -1,0 +1,33 @@
+# Data Cleaning Summary – Toronto Fire Incidents Dataset
+
+The Toronto Fire Incidents dataset contains **36,564 records and 43 columns**. The purpose of data cleaning was to improve data quality and prepare a reliable dataset for analysis and machine learning.
+
+### 1. Checking for Duplicates
+We checked for duplicate rows and duplicate incident numbers. **No duplicates were found.** This ensures that incidents are not counted more than once.
+
+### 2. Standardizing Column Names
+We converted column names to lowercase, removed extra spaces, and replaced spaces with underscores. This makes the columns easier to use in Python and keeps naming consistent.
+
+### 3. Converting Date and Time Columns
+We converted the date and time columns to the `datetime` format. This allows us to perform time calculations later. We also verified that the conversion did not create additional missing values.
+
+### 4. Handling Missing Values
+We identified columns containing missing values, including estimated dollar loss, civilian casualties, and building status. We kept these missing values as `NaN` because missing information does not necessarily mean zero. This prevents us from introducing incorrect information.
+
+### 5. Standardizing Missing Text Values
+We replaced empty strings and values containing only spaces with `NaN`. This ensures that missing information is represented consistently and counted correctly.
+
+### 6. Correcting Invalid Coordinates
+We found three incidents with latitude and longitude values of `0.0`, which are invalid locations for Toronto. We replaced these values with `NaN` without deleting the incidents. As a result, both coordinate columns now contain five missing values.
+
+### 7. Checking Negative Values
+We checked numerical columns for negative values. Negative values were found only in longitude, which is normal because Toronto is west of the Prime Meridian. No corrections were needed.
+
+### 8. Investigating Outliers
+We examined unusually high values, including a **$50 million estimated loss**, 86 rescued persons, and 1,275 responding personnel. We kept these records because there was not enough evidence to confirm they were incorrect. Some unusual records were identified for further investigation.
+
+### 9. Validating Count Columns
+We checked that casualties, rescued persons, responding personnel, apparatus, and displaced persons were recorded as whole numbers. No decimal values were found, so no corrections were necessary.
+
+### Conclusion
+The cleaning process improved the consistency and reliability of the dataset while preserving useful information. We avoided deleting records or replacing unknown values without evidence.
